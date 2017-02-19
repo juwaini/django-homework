@@ -13,8 +13,14 @@ class Company(models.Model):
     name = models.CharField(max_length=100)
     objects = CompanyManager()
 
+    def __unicode__(self):
+        return self.name
+
 
 class Employee(models.Model):
     name = models.CharField(max_length=100)
     age = models.IntegerField()
     company = models.ForeignKey(Company)
+
+    def __str__(self):
+        return '{} - {}'.format(self.name, self.company)

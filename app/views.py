@@ -14,4 +14,3 @@ def get_employee_name_older_than_50():
     for employee in employees:
         print('Name: %s' % employee.name)
 
-

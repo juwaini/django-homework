@@ -4,6 +4,8 @@ from django.db.models import Count
 
 class CompanyManager(models.Manager):
     def big_companies(self):
+        def get_queryset(self):
+            return super(CompanyManager, self).get_queryset()
         return Company.objects.annotate(ep=Count('employee')).filter(ep__gt=20)
 
 
